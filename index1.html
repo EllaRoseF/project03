@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Three Column Layout Using Flexbox</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0 auto;
+        padding: 0 1em;
+        width: 600px;
+        background-color: #eaeaea;
+        color: #555;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        text-align: center;
+        padding-bottom: 5%;
+        
+      }
+      p{
+        background-color: #fff;
+        padding: 0px;
+        border-radius: 10px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        margin: 10px;
+        padding: 10px;
+      }
+     section> p{
+        padding: 0;
+        text-align: center;
+        letter-spacing: 0.04rem;
+        font-size: 15px;
+        box-shadow: none;
+      }
+      footer {
+        background-color: #fff;
+        font-size: 100%;
+        font-style: italic;
+        padding: 0.5em;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+
+      }
+      footer>p, footer> a{
+box-shadow: none;
+text-decoration: none;
+
+        }
+      /* Add your CSS styles here */
+      .flex-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+ 
+
+      }
+      section {
+        flex: 1;
+        padding: 1em;
+        background-color: #fff;
+        margin: 0.5em;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        border-radius: 10px;
+        margin-right: 1em;
+ 
+      }
+      h1,
+        h2,
+        h3 {
+
+          font-family: Arial, "Palatino Linotype", "Times New Roman", Times,
+            serif;
+          border-bottom: 2px solid rgb(87, 185, 178);
+          padding-top: 10px;
+          padding-bottom: 5px;
+        }
+        h1 {
+          font-size: 2em;
+        }
+        #logo {
+          font-family: Baskerville, Palatino, sans-serif; /*  ff */
+          font-size: 2em; /* fz2em */
+          color: rgba(255, 255, 255, 0.8);
+          font-style: italic;
+          text-align: center;
+          margin-bottom: 30px;
+          background-color: rgb(191, 91, 116);
+          border-radius: 0 0 10px 10px;
+          padding: 10px;
+        }
+        .note {
+          color: #000;
+          border: 2px solid #fff;
+          background-color: rgb(69, 189, 102);
+          margin-top: 25px;
+          margin-bottom: 35px;
+          padding: 20px;
+        }
+        .note strong {
+          color: #fc6512;
+        }
+        article {
+          max-width: 760px; /* maw760 */
+          margin: 0 auto;
+        }
+        h1 + p {
+     
+          font-size: 1.2em;
+          line-height: 140%;
+        }
+        a {
+          color: pink;
+        }
+
+        .body {
+          letter-spacing: 0.12em;
+          word-spacing: 0.3em;
+        }
+ 
+
+        @keyframes glow {
+          from {
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073,
+              0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073,
+              0 0 70px #e60073;
+          }
+          to {
+            text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
+              0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6,
+              0 0 80px #ff4da6;
+          }
+        }
+
+        a:hover {
+          color: #fff;
+          text-align: center;
+          animation: glow 2s ease-in-out infinite alternate;
+  
+        }
+        a{
+          text-decoration: none;
+          color: #ff4da6;
+        }
+        .button {
+        display: inline-block;
+        position: relative;
+        background-color: palevioletred;
+        color: white;
+        font-size: 20px;
+        padding: 12px 24px;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+
+      .arrow {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .button:hover .arrow {
+        transform: translateY(-50%) rotate(-45deg);
+      }
+@media (min-width: 1000px){
+  body {
+        margin: 0 auto;
+        padding: 0 1em;
+        width: 1000px;
+        background-color: #eaeaea;
+        color: #555;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        text-align: center;
+        padding-bottom: 5%;
+        
+      }
+}
+   
+    </style>
+  </head>
+
+  <body>
+    <a href="index.html" class="button">
+      Part one <span class="arrow"></span>
+    </a>
+    <h1>The Amazing World of CSS</h1>
+    <p>
+      <strong><a href="/en-US/docs/Glossary/CSS">CSS</a></strong> (Cascading
+          Style Sheets) allows you to create great-looking web pages. Cascading
+          Style Sheets (CSS) is a style sheet language used for describing the
+          presentation of a document written in a markup language such as HTML.
+          CSS is a cornerstone technology of the World Wide Web, alongside HTML
+          and JavaScript.
+    </p>
+
+    <!-- Configure a flex container -->
+    <div class="flex-container">
+      <section>
+        <h2>Who Knew CSS Had Such Power?</h2>
+        <p>
+          Separation of formatting and content also makes it feasible to present
+          the same markup page in different styles for different rendering
+          methods, such as on-screen, in print, by voice (via speech-based
+          browser or screen reader), and on Braille-based tactile devices. CSS
+          also has rules for alternate formatting if the content is accessed on
+          a mobile device.
+        </p>
+      </section>
+
+      <section>
+        <h2>Not Me!</h2>
+        <p>
+          Classes, divs, and ids are fundamental tools in web development for
+          applying CSS styles and structuring HTML content. Classes are
+          reusable identifiers used to apply common styles to multiple
+          elements, divs create containers to group and structure content, and
+          ids are unique identifiers used for specialized styling of
+          individual elements. Together, they provide developers with powerful
+          ways to customize the appearance and structure of webpages, making
+          them essential for creating visually appealing and functional
+          websites.
+      </p>
+    </section>
+
+    <section>
+      <h2>Me Neither!</h2>
+      <p>
+        In web development, classes are reusable identifiers that can be
+            applied to multiple elements for consistent styling, while ids are
+            unique identifiers used for individual elements. Classes allow for
+            flexibility and can be applied to various elements, while ids are
+            highly specific and have higher styling priority. IDs are commonly
+            used for JavaScript interaction, while classes are primarily used
+            for styling purposes, making them essential tools for web developers
+            to customize the appearance and functionality of webpages.
+      </p>
+    </section>
+
+    <!-- The div container should end here -->
+
+    <!-- Update the footer content with the correct year, your name, and a hyperlink to your email -->
+    <footer>
+      <p>Copyright 2023,  Ella Flaherty <a href="mailto:ellarflah@gmail.com"> Contact</a></p>
+    </footer>
+  </body>
+</html>

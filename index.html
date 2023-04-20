@@ -85,10 +85,41 @@
         border: 5px solid #000;
         margin-bottom: 0;
       }
+      .button {
+        display: inline-block;
+        position: relative;
+        background-color: #6699B3;
+        color: white;
+        font-size: 20px;
+        padding: 12px 24px;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+
+      .arrow {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .button:hover .arrow {
+        transform: translateY(-50%) rotate(-45deg);
+      }
     </style>
   </head>
 
   <body>
+    <a href="index1.html" class="button">
+      Part two <span class="arrow"></span>
+    </a>
     <h1>Example of the Box Model</h1>
     <div id="box">
       HTML elements display as boxes on web pages. This div element is
